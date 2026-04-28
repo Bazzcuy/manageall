@@ -28,7 +28,7 @@ export default function Home() {
             </span>
           </div>
           <h3>{t.dashboard.totalRevenue}</h3>
-          <p className={styles.statValue}>$45,231.89</p>
+          <p className={styles.statValue}>Rp 45.231.890</p>
         </div>
 
         <div className={`${styles.statCard} surface-panel`}>

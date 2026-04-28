@@ -74,11 +74,11 @@ export default function CRM() {
             </thead>
             <tbody>
               {[
-                { name: 'Sarah Jenkins', company: 'TechNova', status: 'active', email: 'sarah@technova.io', phone: '+1 (555) 123-4567', avatar: 'S' },
-                { name: 'Michael Chen', company: 'Global Solutions', status: 'lead', email: 'm.chen@globalsol.com', phone: '+1 (555) 987-6543', avatar: 'M' },
-                { name: 'Emma Watson', company: 'Design Co.', status: 'inactive', email: 'emma@designco.net', phone: '+44 20 7123 4567', avatar: 'E' },
-                { name: 'David Miller', company: 'BuildRight', status: 'active', email: 'david@buildright.com', phone: '+1 (555) 456-7890', avatar: 'D' },
-                { name: 'Olivia Davis', company: 'FinanceHub', status: 'lead', email: 'olivia@financehub.io', phone: '+1 (555) 234-5678', avatar: 'O' },
+                { name: 'Budi Santoso', company: 'PT Teknologi Nusantara', status: 'active', email: 'budi@teknus.id', phone: '+62 812-3456-7890', avatar: 'B' },
+                { name: 'Siti Aminah', company: 'Solusi Global', status: 'lead', email: 's.aminah@solusiglobal.co.id', phone: '+62 811-9876-5432', avatar: 'S' },
+                { name: 'Andi Wijaya', company: 'Desain Kreasi', status: 'inactive', email: 'andi@kreasi.net', phone: '+62 813-7123-4567', avatar: 'A' },
+                { name: 'David Gunawan', company: 'Bina Konstruksi', status: 'active', email: 'david@binakonstruksi.com', phone: '+62 852-4567-8901', avatar: 'D' },
+                { name: 'Rina Kusuma', company: 'Keuangan Sentosa', status: 'lead', email: 'rina@sentosa.io', phone: '+62 818-2345-6789', avatar: 'R' },
               ].map((contact, i) => (
                 <tr key={i}>
                   <td>

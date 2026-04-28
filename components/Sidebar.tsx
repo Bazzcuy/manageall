@@ -37,6 +37,10 @@ export default function Sidebar() {
           <Users size={18} />
           <span>{t.nav.crm}</span>
         </Link>
+        <Link href="/projects" className={`${styles.navItem} ${isActive('/projects') ? styles.active : ''}`}>
+          <Briefcase size={18} />
+          <span>{t.nav.projects || 'Proyek'}</span>
+        </Link>
         <Link href="/hr" className={`${styles.navItem} ${isActive('/hr') ? styles.active : ''}`}>
           <Briefcase size={18} />
           <span>{t.nav.hr}</span>

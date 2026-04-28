@@ -26,7 +26,7 @@ export default function Finance() {
             <h3>{t.finance.totalBalance}</h3>
             <DollarSign className={styles.iconBlue} size={20} />
           </div>
-          <p className={styles.balanceAmount}>$128,450.00</p>
+          <p className={styles.balanceAmount}>Rp 128.450.000</p>
           <div className={styles.trend}>
             <TrendingUp size={16} className={styles.positive} />
             <span className={styles.positive}>+8.5%</span> {t.finance.fromLastMonth}
@@ -38,7 +38,7 @@ export default function Finance() {
             <h3>{t.finance.monthlyIncome}</h3>
             <TrendingUp className={styles.iconGreen} size={20} />
           </div>
-          <p className={styles.balanceAmount}>$45,231.89</p>
+          <p className={styles.balanceAmount}>Rp 45.231.890</p>
           <div className={styles.trend}>
             <TrendingUp size={16} className={styles.positive} />
             <span className={styles.positive}>+12.5%</span> {t.finance.fromLastMonth}
@@ -50,7 +50,7 @@ export default function Finance() {
             <h3>{t.finance.monthlyExpenses}</h3>
             <TrendingDown className={styles.iconRed} size={20} />
           </div>
-          <p className={styles.balanceAmount}>$18,900.50</p>
+          <p className={styles.balanceAmount}>Rp 18.900.500</p>
           <div className={styles.trend}>
             <TrendingDown size={16} className={styles.negative} />
             <span className={styles.negative}>-2.4%</span> {t.finance.fromLastMonth}
@@ -77,11 +77,11 @@ export default function Finance() {
               </thead>
               <tbody>
                 {[
-                  { desc: 'Stripe Payout', date: 'Oct 24, 2023', cat: 'Income', amount: '+$4,500.00', status: 'completed', type: 'income' },
-                  { desc: 'AWS Hosting', date: 'Oct 23, 2023', cat: 'Infrastructure', amount: '-$850.00', status: 'completed', type: 'expense' },
-                  { desc: 'Upwork Freelancers', date: 'Oct 21, 2023', cat: 'Contractors', amount: '-$1,200.00', status: 'pending', type: 'expense' },
-                  { desc: 'Annual Subscription', date: 'Oct 19, 2023', cat: 'Software', amount: '-$299.00', status: 'completed', type: 'expense' },
-                  { desc: 'Client Invoice #1023', date: 'Oct 15, 2023', cat: 'Income', amount: '+$8,250.00', status: 'completed', type: 'income' },
+                  { desc: 'Pencairan Invoice #1023 (PT Jaya)', date: '24 Okt 2023', cat: 'Income', amount: '+Rp 45.000.000', status: 'completed', type: 'income' },
+                  { desc: 'Langganan Server AWS (Asia)', date: '23 Okt 2023', cat: 'Infrastructure', amount: '-Rp 8.500.000', status: 'completed', type: 'expense' },
+                  { desc: 'Gaji Konsultan Lepas (Budi)', date: '21 Okt 2023', cat: 'Contractors', amount: '-Rp 12.000.000', status: 'pending', type: 'expense' },
+                  { desc: 'Langganan Software ERP Tahunan', date: '19 Okt 2023', cat: 'Software', amount: '-Rp 2.990.000', status: 'completed', type: 'expense' },
+                  { desc: 'Pembayaran Klien #1024', date: '15 Okt 2023', cat: 'Income', amount: '+Rp 82.500.000', status: 'completed', type: 'income' },
                 ].map((tx, i) => (
                   <tr key={i}>
                     <td className={styles.txDesc}>{tx.desc}</td>
