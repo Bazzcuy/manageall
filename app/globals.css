@@ -1,20 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-color: #0f172a;
-  --bg-surface: rgba(30, 41, 59, 0.7);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-primary: #3b82f6;
-  --accent-secondary: #10b981;
-  --accent-warning: #f59e0b;
-  --accent-danger: #ef4444;
+  /* LIGHT THEME (Default fallback but we use data-theme) */
+  --bg-color: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-hover: #f1f5f9;
   
-  --border-color: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  --glass-backdrop: blur(10px);
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-tertiary: #94a3b8;
+  
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  
+  --accent-primary: #000000;
+  --accent-primary-hover: #333333;
+  --accent-primary-text: #ffffff;
+  
+  --accent-secondary: #10b981;
+  --accent-secondary-bg: #d1fae5;
+  
+  --accent-warning: #f59e0b;
+  --accent-warning-bg: #fef3c7;
+  
+  --accent-danger: #ef4444;
+  --accent-danger-bg: #fee2e2;
+  
+  --accent-blue: #3b82f6;
+  --accent-blue-bg: #dbeafe;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  
   --sidebar-width: 260px;
   --header-height: 70px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+[data-theme='dark'] {
+  --bg-color: #09090b;
+  --bg-surface: #18181b;
+  --bg-hover: #27272a;
+  
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #52525b;
+  
+  --border-color: #27272a;
+  --border-hover: #3f3f46;
+  
+  --accent-primary: #ffffff;
+  --accent-primary-hover: #e4e4e7;
+  --accent-primary-text: #000000;
+  
+  --accent-secondary: #10b981;
+  --accent-secondary-bg: rgba(16, 185, 129, 0.15);
+  
+  --accent-warning: #f59e0b;
+  --accent-warning-bg: rgba(245, 158, 11, 0.15);
+  
+  --accent-danger: #ef4444;
+  --accent-danger-bg: rgba(239, 68, 68, 0.15);
+  
+  --accent-blue: #3b82f6;
+  --accent-blue-bg: rgba(59, 130, 246, 0.15);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -24,15 +79,11 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-primary);
   line-height: 1.5;
-  background-image: 
-    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, hsla(225,39%,30%,0.3) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, hsla(339,49%,30%,0.3) 0, transparent 50%);
-  background-attachment: fixed;
+  transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
 }
 
@@ -41,18 +92,21 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: inherit;
+}
+
 /* Utilities */
-.glass-panel {
+.surface-panel {
   background: var(--bg-surface);
-  backdrop-filter: var(--glass-backdrop);
-  -webkit-backdrop-filter: var(--glass-backdrop);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
-  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -66,11 +120,15 @@ a {
 .main-content {
   flex: 1;
   margin-left: var(--sidebar-width);
-  padding: calc(var(--header-height) + 24px) 32px 32px 32px;
+  padding: 24px 40px 60px 40px;
   transition: all 0.3s ease;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-left: var(--sidebar-width);
 }
 
 /* Typography */
-h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
-h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+h1 { font-size: 1.875rem; font-weight: 600; margin-bottom: 0.25rem; letter-spacing: -0.025em; }
+h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; letter-spacing: -0.025em; }
+h3 { font-size: 1.125rem; font-weight: 500; margin-bottom: 0.5rem; letter-spacing: -0.015em; }
 p { color: var(--text-secondary); margin-bottom: 1rem; }

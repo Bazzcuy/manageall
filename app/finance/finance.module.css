@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.4s ease-out;
 }
 
 @keyframes fadeIn {
@@ -22,35 +22,40 @@
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, var(--accent-secondary), #34d399);
-  color: white;
-  border: none;
+  background-color: var(--accent-primary);
+  color: var(--accent-primary-text);
+  border: 1px solid var(--accent-primary);
   padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 .primaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  background-color: var(--accent-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .secondaryButton {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-surface);
   color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-color);
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   font-weight: 500;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .secondaryButton:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
 }
 
 .balanceGrid {
@@ -61,11 +66,6 @@
 
 .balanceCard {
   padding: 24px;
-  transition: transform 0.3s ease;
-}
-
-.balanceCard:hover {
-  transform: translateY(-5px);
 }
 
 .cardHeader {
@@ -80,29 +80,31 @@
   font-weight: 600;
   color: var(--text-primary);
   margin: 0;
+  letter-spacing: -0.015em;
 }
 
-.iconBlue { color: var(--accent-primary); }
+.iconBlue { color: var(--accent-blue); }
 .iconGreen { color: var(--accent-secondary); }
 .iconRed { color: var(--accent-danger); }
 
 .balanceAmount {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 16px;
+  letter-spacing: -0.025em;
 }
 
 .trend {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
 }
 
-.positive { color: var(--accent-secondary); }
-.negative { color: var(--accent-danger); }
+.positive { color: var(--accent-secondary); font-weight: 500; }
+.negative { color: var(--accent-danger); font-weight: 500; }
 
 .contentGrid {
   display: grid;
@@ -117,15 +119,17 @@
 .textButton {
   background: transparent;
   border: none;
-  color: var(--accent-primary);
+  color: var(--text-secondary);
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 4px;
   cursor: pointer;
+  font-size: 0.85rem;
 }
 
 .textButton:hover {
+  color: var(--text-primary);
   text-decoration: underline;
 }
 
@@ -142,27 +146,37 @@
 .table th {
   text-align: left;
   padding: 12px 16px;
-  color: var(--text-secondary);
-  font-weight: 500;
-  font-size: 0.875rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-tertiary);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .table td {
   padding: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-color);
   font-size: 0.875rem;
 }
 
+.txDesc {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
 .dimText {
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
 }
 
 .badge {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-hover);
   padding: 4px 10px;
-  border-radius: 20px;
+  border-radius: 4px;
   font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border: 1px solid var(--border-color);
 }
 
 .positiveText { color: var(--accent-secondary); font-weight: 600; }
@@ -172,16 +186,16 @@
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .statusBadge.completed {
-  background: rgba(16, 185, 129, 0.1);
+  background: var(--accent-secondary-bg);
   color: var(--accent-secondary);
 }
 
 .statusBadge.pending {
-  background: rgba(245, 158, 11, 0.1);
+  background: var(--accent-warning-bg);
   color: var(--accent-warning);
 }
 
@@ -192,12 +206,12 @@
 }
 
 .creditCard {
-  background: linear-gradient(135deg, #4f46e5, #ec4899);
-  border-radius: 16px;
+  background: linear-gradient(135deg, #1e1b4b, #4338ca);
+  border-radius: var(--radius-lg);
   padding: 24px;
   color: white;
   margin-top: 16px;
-  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 10px 25px rgba(67, 56, 202, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -241,8 +255,9 @@
 .cardLabel {
   font-size: 0.65rem;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 0.7;
   margin-bottom: 4px;
+  font-weight: 600;
 }
 
 .cardValue {
@@ -253,19 +268,21 @@
 
 .addCardBtn {
   margin-top: 24px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  color: var(--text-primary);
+  background: transparent;
+  border: 1px dashed var(--border-color);
+  color: var(--text-secondary);
   padding: 16px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .addCardBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--accent-primary);
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
 }
 
 @media (max-width: 1024px) {

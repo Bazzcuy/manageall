@@ -3,32 +3,33 @@
   justify-content: space-between;
   align-items: center;
   height: var(--header-height);
-  padding: 0 24px;
   margin-bottom: 32px;
   position: sticky;
-  top: 16px;
+  top: 0;
   z-index: 90;
+  background-color: var(--bg-color);
+  padding-top: 24px;
 }
 
 .searchContainer {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 8px 16px;
-  width: 300px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  width: 320px;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .searchContainer:focus-within {
-  border-color: var(--accent-primary);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  border-color: var(--text-tertiary);
+  box-shadow: 0 0 0 2px var(--bg-hover);
 }
 
 .searchIcon {
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
   margin-right: 12px;
 }
 
@@ -42,42 +43,61 @@
 }
 
 .searchInput::placeholder {
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
+}
+
+.searchShortcut {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  background: var(--bg-hover);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  font-weight: 500;
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .iconButton {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-primary);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  height: 36px;
+  min-width: 36px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .iconButton:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.langText {
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .badge {
   position: absolute;
-  top: 8px;
-  right: 10px;
+  top: -2px;
+  right: -2px;
   width: 8px;
   height: 8px;
   background: var(--accent-danger);
   border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--bg-surface);
+  box-shadow: 0 0 0 2px var(--bg-color);
 }
