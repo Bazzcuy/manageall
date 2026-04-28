@@ -1,0 +1,180 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--accent-primary), #60a5fa);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.statCard {
+  padding: 24px;
+  transition: transform 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.green { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.orange { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.purple { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+.positive {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #10b981;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.negative {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.statCard h3 {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.chartCard {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockChart {
+  flex: 1;
+  min-height: 250px;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+}
+
+.bar {
+  width: 12%;
+  background: linear-gradient(to top, var(--accent-primary), #60a5fa);
+  border-radius: 4px 4px 0 0;
+  transition: height 1s ease;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.activityItem {
+  display: flex;
+  gap: 16px;
+}
+
+.activityDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  margin-top: 6px;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.activityTitle {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin: 0;
+}
+
+.activityTime {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin: 0;
+  margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+}
