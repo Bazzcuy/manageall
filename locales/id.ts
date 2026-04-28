@@ -97,5 +97,41 @@ export const id = {
     title: "Manajemen Proyek",
     subtitle: "Pantau progress proyek tim Anda.",
     newProject: "Proyek Baru"
+  },
+  
+  // HR
+  hr: {
+    title: "HR & Penggajian",
+    subtitle: "Kelola absensi dan gaji tim Anda.",
+    addEmployee: "Tambah Karyawan",
+    totalEmployees: "Total Karyawan",
+    onLeave: "Sedang Cuti",
+    estPayroll: "Estimasi Gaji",
+    directory: "Direktori Karyawan",
+    table: {
+      name: "Nama",
+      role: "Peran",
+      status: "Status",
+      department: "Departemen",
+      salary: "Gaji"
+    }
+  },
+  
+  // Settings
+  settings: {
+    title: "Pengaturan",
+    subtitle: "Kelola preferensi dan akun sistem Anda.",
+    saveChanges: "Simpan Perubahan",
+    profile: "Profil",
+    company: "Perusahaan",
+    notifications: "Notifikasi",
+    labels: {
+      fullName: "Nama Lengkap",
+      email: "Alamat Email",
+      companyName: "Nama Perusahaan",
+      address: "Alamat",
+      emailNotif: "Notifikasi Email",
+      emailNotifDesc: "Terima email ringkasan harian"
+    }
   }
 };

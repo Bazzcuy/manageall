@@ -97,5 +97,41 @@ export const en = {
     title: "Projects",
     subtitle: "Monitor your team's project progress.",
     newProject: "New Project"
+  },
+  
+  // HR
+  hr: {
+    title: "HR & Payroll",
+    subtitle: "Manage your team's attendance and salary.",
+    addEmployee: "Add Employee",
+    totalEmployees: "Total Employees",
+    onLeave: "On Leave",
+    estPayroll: "Est. Payroll",
+    directory: "Employee Directory",
+    table: {
+      name: "Name",
+      role: "Role",
+      status: "Status",
+      department: "Department",
+      salary: "Salary"
+    }
+  },
+  
+  // Settings
+  settings: {
+    title: "Settings",
+    subtitle: "Manage your account settings and preferences.",
+    saveChanges: "Save Changes",
+    profile: "Profile",
+    company: "Company",
+    notifications: "Notifications",
+    labels: {
+      fullName: "Full Name",
+      email: "Email Address",
+      companyName: "Company Name",
+      address: "Address",
+      emailNotif: "Email Notifications",
+      emailNotifDesc: "Receive daily summary emails"
+    }
   }
 };
