@@ -35,10 +35,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = language === 'en' ? en : id;
 
-  if (!mounted) {
-    return <div style={{ visibility: 'hidden' }}>{children}</div>;
-  }
-
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
       {children}
