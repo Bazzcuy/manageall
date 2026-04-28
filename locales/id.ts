@@ -19,6 +19,7 @@ export const id = {
     dashboard: "Dasbor",
     finance: "Keuangan",
     crm: "CRM",
+    projects: "Proyek",
     hr: "HR & Penggajian",
     settings: "Pengaturan"
   },
@@ -89,5 +90,12 @@ export const id = {
       phone: "Telepon",
       actions: "Aksi"
     }
+  },
+  
+  // Projects
+  projects: {
+    title: "Manajemen Proyek",
+    subtitle: "Pantau progress proyek tim Anda.",
+    newProject: "Proyek Baru"
   }
 };

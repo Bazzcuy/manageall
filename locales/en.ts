@@ -19,6 +19,7 @@ export const en = {
     dashboard: "Dashboard",
     finance: "Finance",
     crm: "CRM",
+    projects: "Projects",
     hr: "HR & Payroll",
     settings: "Settings"
   },
@@ -89,5 +90,12 @@ export const en = {
       phone: "Phone",
       actions: "Actions"
     }
+  },
+  
+  // Projects
+  projects: {
+    title: "Projects",
+    subtitle: "Monitor your team's project progress.",
+    newProject: "New Project"
   }
 };
